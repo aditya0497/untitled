@@ -15,9 +15,7 @@ export class AuthService {
 
   constructor() {}
 
-  login(username: string, password: string): boolean {
-    console.log(this.users);
-    console.log(username, password);
+  public login(username: string, password: string): boolean {
     const user = this.users.find(u => u.username === username && u.password === password);
     if (user && password === user.password) {
       this.isAuthenticated = true;
@@ -32,20 +30,20 @@ export class AuthService {
     this.login(username, password); // Automatically log the user in after registration
   }
 
-  getUsername(): string {
+  public getUsername(): string {
     return this.username; // Return the current logged-in user's username
   }
 
-  logout(): void {
+  public logout(): void {
     this.isAuthenticated = false;
     this.username = '';
   }
 
-  isLoggedIn(): boolean {
+  public isLoggedIn(): boolean {
     return this.isAuthenticated;
   }
 
-  setAuthenticated(value: boolean, username: string): void {
+  public setAuthenticated(value: boolean, username: string): void {
     this.isAuthenticated = value;
     this.username = username;
   }
