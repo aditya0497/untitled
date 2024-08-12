@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root',  // This makes the service available application-wide without needing to add it to providers array
+  providedIn: 'root'
 })
 export class AuthService {
 
@@ -27,11 +27,11 @@ export class AuthService {
 
   register(email: string, username: string, password: string): void {
     this.users.push({ email, username, password });
-    this.login(username, password); // Automatically log the user in after registration
+    this.login(username, password);
   }
 
   public getUsername(): string {
-    return this.username; // Return the current logged-in user's username
+    return this.username;
   }
 
   public logout(): void {
