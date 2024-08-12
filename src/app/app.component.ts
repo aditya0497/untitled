@@ -6,9 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  currentView: string = 'home'; // Default view is home
+  public currentView: string = 'home'; // Default view is home
 
-  navigate(view: string) {
+  public navigate(view: string): void {
     this.currentView = view;
   }
 }
