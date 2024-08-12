@@ -1,0 +1,11 @@
+<div class="container">
+  <div *ngIf="currentView === 'login'">
+    <app-login (navigate)="navigate($event)"></app-login>
+  </div>
+  <div *ngIf="currentView === 'home'">
+    <app-home (navigate)="navigate($event)"></app-home>
+  </div>
+  <div *ngIf="currentView === 'register'">
+    <app-register (navigate)="navigate($event)"></app-register>
+  </div>
+</div>

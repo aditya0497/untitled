@@ -1,0 +1,22 @@
+<div class="modal-background">
+  <div class="login-container">
+    <div class="login-container-header">WELCOME BACK</div>
+    <div class="login-container-subheader">Login into your account</div>
+    <form (ngSubmit)="login()">
+      <div class="form-elements">
+        <label style="color: #C5C7CA" for="username">Email or Username</label>
+        <input type="text" id="username" [(ngModel)]="username" name="username" placeholder="Enter your email or username">
+      </div>
+      <div class="password-container">
+        <label style="color: #C5C7CA" for="password">Password</label>
+        <a href="#login" class="forgot-password">Forgot password?</a>
+      </div>
+      <div>
+        <input type="password" id="password" [(ngModel)]="password" name="password" placeholder="Enter your password">
+      </div>
+      <button type="submit">Login now</button>
+      <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+    </form>
+    <p>Not registered yet? <a (click)="goToRegister()">Register</a></p>
+  </div>
+</div>
